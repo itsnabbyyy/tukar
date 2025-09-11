@@ -1,18 +1,24 @@
 // src/components/LandingNavbar.jsx
-import { Link } from 'react-router-dom'
-import { useStore } from '../store'
-import { Lock } from 'lucide-react'
+import { Link } from "react-router-dom";
+import { useStore } from "../store";
+import { Lock } from "lucide-react";
 
 export default function LandingNavbar() {
-  const openAuth = useStore(s => s.openAuth)
+  const openAuth = useStore((s) => s.openAuth);
 
   return (
     <header className="sticky top-0 z-30 bg-paper/70 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
         {/* Brand */}
-        <Link to="/" className="flex items-center gap-2" aria-label="MatchIN Home">
+        <Link
+          to="/"
+          className="flex items-center gap-2"
+          aria-label="MatchIN Home"
+        >
           <Lock className="h-5 w-5 text-ink/80" />
-          <span className="text-lg font-semibold tracking-wide text-ink">matchIN</span>
+          <span className="text-lg font-semibold tracking-wide text-ink">
+            MatchIN
+          </span>
         </Link>
 
         {/* Right nav group */}
@@ -33,7 +39,7 @@ export default function LandingNavbar() {
               MatchinAR
             </a>
             <button
-              onClick={() => openAuth('signin')}
+              onClick={() => openAuth("signin")}
               className="rounded-full bg-ink px-5 py-2 text-sm font-medium text-white"
             >
               Sign In
@@ -42,5 +48,5 @@ export default function LandingNavbar() {
         </div>
       </div>
     </header>
-  )
+  );
 }
